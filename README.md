@@ -49,7 +49,7 @@ You can play and submit as many times as you want, but we only store the LATEST 
 				"status":200,
 				"data":
 				{
-					"numberOflWordsToGuess":80,
+					"numberOfWordsToGuess":80,
 					"numberOfGuessAllowedForEachWord":10
 				}
 			}

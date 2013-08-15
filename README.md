@@ -31,7 +31,7 @@ You can play and submit as many times as you want, but we only store the LATEST 
 		* Request:
 			<pre><code>
 			{
-				"action" : "initiateGame"
+				"action" : "initiateGame",
 				"userId" : "test@test.com"
 			}
 			</code></pre>

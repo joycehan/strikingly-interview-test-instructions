@@ -262,6 +262,8 @@ You can play and submit as many times as you want, but we only store the LATEST 
 				"key2":"value2"
 			}
 		</code></pre>
+
+Sample: curl -X POST -d '{"userId":YOUR_EMAIL, "action":"initiateGame"}' http://strikingly-interview-test.herokuapp.com/guess/process --header "Content-Type:application/json"
 		
 
 ## Tips:

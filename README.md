@@ -177,8 +177,8 @@ You can play and submit as many times as you want, but we only store the LATEST 
 				"data":
 				{
 					"numberOfWordsTried":80,
-					"numberOfCorrectWord":50,
-					"numberOfWrongGuess":300,
+					"numberOfCorrectWords":50,
+					"numberOfWrongGuesses":300,
 					"totalScore": 700
 				}
 			}
@@ -189,8 +189,8 @@ You can play and submit as many times as you want, but we only store the LATEST 
 			2. "userId", "secret", "status" - explained in Response section of "Initite Game"
 			3. "data" - your results! 
 				* "numberOfWordsTried" - the total number of words you tried in this game.
-				* "numberOfCorrectWord" - the total number of words you guess correctly 
-				* "numberOfWrongGuess" - the total number of Wrong guess you have made. That is the "guessWord" you made but incorrect.
+				* "numberOfCorrectWords" - the total number of words you guess correctly 
+				* "numberOfWrongGuesses" - the total number of Wrong guess you have made. That is the "guessWord" you made but incorrect.
 				* "totalScore" - the total score is calculated. The higher the totalScore, the better results! 
 					- totalScore = numberOfCorrectWord * 20 - numberOfWrongGuess. 
 

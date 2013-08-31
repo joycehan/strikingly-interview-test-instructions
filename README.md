@@ -61,7 +61,7 @@ You can play and submit as many times as you want, but we only store the LATEST 
 			3. "secret" gives you a secret for the follwing communication. This secret key identifies each game you play.
 			4. "status" tells you the status of your request. It follows the standard HTTP Status Code. 200 - OK, 400 - Bad Request, 401 - Unauthenticated
 			5. "data" contains some useful data for your reference. In the "initiateGame" response, 
-				"numberOflWordsToGuess" - tells you how many words you will have to guess to finish the game.
+				"numberOfWordsToGuess" - tells you how many words you will have to guess to finish the game.
 				"numberOfGuessAllowedForEachWord" - tells you how many INCORRECT guess you may have for each word.
 
 2. **Give Me A Word**

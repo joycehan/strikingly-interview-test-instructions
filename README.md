@@ -285,4 +285,21 @@ In case you want to make queries on any unexpected system error, please send us 
 
 HAVE FUN!
 
+{
+	"message":"Thank You! Please copy and paste this JSON to README.md on your github",
+	"userId":"jonychina162@gmail.com",
+	"secret":"UO7MYJXWAYYCIK90TFVB95JFAPDS4I",
+	"status":200,
+	"data":
+	{
+		"userId":"jonychina162@gmail.com",
+		"secret":"UO7MYJXWAYYCIK90TFVB95JFAPDS4I",
+		"numberOfWordsTried":80,
+		"numberOfCorrectWords":50,
+		"numberOfWrongGuesses":null,
+		"totalScore":364,
+		"dateTime":Fri Sep 06 2013 19:26:39 GMT+0000 (UTC),
+	}
+}
+
 

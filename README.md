@@ -197,7 +197,7 @@ You can play and submit as many times as you want, but we only store the LATEST 
 5. **Submit Test Results**
 	- After getting your results, if you are happy with your results, then you can submit the results
 	- To submit the results, you put "action":"submitTestResults"
-	- You should copy and paste the repsonse to README.md on the github repository
+	- You should copy the repsonse and send to joyce[at]strikingly.com
 	- Request & Response
 		* Request:
 			<pre><code> 
@@ -215,7 +215,7 @@ You can play and submit as many times as you want, but we only store the LATEST 
 		* Response:
 			<pre><code> 
 			{
-				"message":"Thank You! Please copy and paste this JSON to README.md on your github",
+				"message":"Thank You! Please paste this JSON and send to joyce[at]strikingly.com",
 				"userId":"test@test.com",
 				"secret":"2V2GUB00590H33DIEMH24V9V03PU8F",
 				"status":200,

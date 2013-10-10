@@ -6,18 +6,20 @@
 This test is based on the famous Hangman Game. Your task is to write a program to play Hangman, guessing words from our server through a REST API.
 
 ## Requirements
-1. Write a program according to the following specifications. When you're happy with your score, submit your score to us.
-2. Email us your finished program! Be sure to include a Readme.txt explaining the cool things you did.
-3. You may use ANY computer programming language that you are familiar with. It could be JAVA, PHP, RUBY, JAVASCRIPT, PYTHON, C, C++, C#, bash...... ( you name it). 
-4. You can use ANY libraries relevant for this task.
+* Write a program according to the following specifications. When you're happy with your score, submit your score to us.
+* Email us your finished program! Be sure to include a Readme.txt explaining the cool things you did.
+* We prefer you use Ruby, Node.js or Javascript, but if you are not familiar with these languages, feel free to use ANY computer programming language.
+* You can use ANY libraries relevant for this task.
 
 ## Our Expectations
 Through this programming test, you should be able to demostrate:
 
-1. Good understanding on the programming language you are good at.
-2. Good programming practices
-3. Apply suitable algorithms to solve problems
-4. Creativity!
+* Good understanding on the programming language you are good at
+* Code quality and maintainability
+* Good programming practices
+* Fully tested
+* Apply suitable algorithms to solve problems
+* Creativity!
 
 ## Program Flow and Sepecification
 The overall workflow is in 5 stages, namely "Initiate Game", "Give Me A Word", "Make A Guess", "Get Test Results" & "Submit Test Results"
@@ -263,6 +265,10 @@ You can play and submit as many times as you want, but we only store the LATEST 
 				"key2":"value2"
 			}
 		</code></pre>
+
+Sample: 
+
+`curl -X POST -d '{"userId":YOUR_EMAIL, "action":"initiateGame"}' http://strikingly-interview-test.herokuapp.com/guess/process --header "Content-Type:application/json"`
 		
 
 ## Tips:

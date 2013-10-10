@@ -17,7 +17,6 @@ Through this programming test, you should be able to demostrate:
 * Good understanding on the programming language you are good at
 * Code quality and maintainability
 * Good programming practices
-* Fully tested
 * Apply suitable algorithms to solve problems
 * Creativity!
 

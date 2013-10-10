@@ -14,7 +14,7 @@ This test is based on the famous Hangman Game. Your task is to write a program t
 ## Our Expectations
 Through this programming test, you should be able to demostrate:
 
-* Good understanding on the programming language you are good at.
+* Good understanding on the programming language you are good at
 * Code quality and maintainability
 * Good programming practices
 * Fully tested
@@ -265,7 +265,9 @@ You can play and submit as many times as you want, but we only store the LATEST 
 			}
 		</code></pre>
 
-Sample: curl -X POST -d '{"userId":YOUR_EMAIL, "action":"initiateGame"}' http://strikingly-interview-test.herokuapp.com/guess/process --header "Content-Type:application/json"
+Sample: 
+
+`curl -X POST -d '{"userId":YOUR_EMAIL, "action":"initiateGame"}' http://strikingly-interview-test.herokuapp.com/guess/process --header "Content-Type:application/json"`
 		
 
 ## Tips:

@@ -6,7 +6,7 @@
 This test is based on the famous Hangman Game. Your task is to write a program to play Hangman, guessing words from our server through a REST API.
 
 ## Requirements
-* Write a program according to the following specifications. When you're happy with your score, submit your score to us.
+* Write a program according to the following specifications. When you run the program, the program should play the game automatically. When you're happy with your score, submit your score to us.
 * Email us your finished program! Be sure to include a Readme.txt explaining the cool things you did.
 * We prefer you use Ruby, Node.js or Javascript, but if you are not familiar with these languages, feel free to use ANY computer programming language. For front-end applicants, please use JavaScript or CoffeeScript!
 * You can use ANY libraries relevant for this task.

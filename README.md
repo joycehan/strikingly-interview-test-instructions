@@ -20,7 +20,7 @@ Through this programming test, you should be able to demostrate:
 * Apply suitable algorithms to solve problems
 * Creativity!
 
-## Program Flow and Sepecification
+## Program Flow and Specification
 The overall workflow is in 5 stages, namely "Initiate Game", "Give Me A Word", "Make A Guess", "Get Test Results" & "Submit Test Results"
 You can play and submit as many times as you want, but we only store the LATEST submitted score. When you're satisfied with your score, don't submit any more!
 

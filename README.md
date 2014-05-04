@@ -250,7 +250,7 @@ You can play and submit as many times as you want, but we only store the LATEST 
     * 41st to 60th word : length <= 12 characters
     * 61st to 80th word : length > 12 characters
 
-## Http Request Sepecification
+## Http Request Specification
 1. Request URL: <Please found it in your email address>
 
 2. HTTP Request

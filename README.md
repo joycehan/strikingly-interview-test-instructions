@@ -9,10 +9,10 @@ This test is based on the famous Hangman Game. Your task is to write a program t
 * Write a program according to the following specifications. When you run the program, the program should play the game automatically. When you're happy with your score, submit your score to us.
 * Email us your finished program! Be sure to include a Readme.txt explaining the cool things you did.
 * We prefer you use Ruby, Node.js or Javascript, but if you are not familiar with these languages, feel free to use ANY computer programming language. For front-end applicants, please use JavaScript or CoffeeScript!
-* You can use ANY libraries relevant for this task.
+* You can use ANY libraries relevant for this task. Use libraries to save dev time!
 
 ## Our Expectations
-Through this programming test, you should be able to demostrate:
+Through this programming test, you should be able to demonstrate:
 
 * Good understanding on the programming language you are good at
 * Code quality and maintainability
@@ -38,7 +38,7 @@ You can play and submit as many times as you want, but we only store the LATEST 
       </code></pre>
 
       Explanation: 
-      1. "action" key should have the value for "initiateGame"
+      1. "action" key should have the value "initiateGame"
       2. "userId" key should be your email address, shown on your invitation email. please contact joyce@strikingly.com if you find your email address is invalid in this programming test.
 
     * Response:
@@ -109,7 +109,7 @@ You can play and submit as many times as you want, but we only store the LATEST 
 
 3. **Make A Guess**
   - You can make a guess on those characters shown as "*" in a word
-  - You can only guess ONE character per request, i.e. "guess":"P". **NOTE**: The system will treat two characters or more as WRONG guess.
+  - You can only guess ONE character per request, i.e. "guess":"P". **NOTE**: The system will treat two or more characters as a WRONG guess.
   - Let's say the word - "*****" is indeed "HAPPY". If the your character does exist in the word, then the response will return you the character in the corresponding positions of the word, i.e. "word": "**PP*"
   - But if your guess is incorrect, then it will return you the same word. Say you make your next guess as "guess":"K" and "K" does NOT exist in "HAPPY", you will get the response as "**PP*"
   - If you get the "word" without any "*", then it means you get the word correct. for instance, "word":"HAPPY". And you can then get a new word by sending "Give A Word" request
@@ -126,7 +126,7 @@ You can play and submit as many times as you want, but we only store the LATEST 
 
       Explanation:
       1. "action" should be "guessWord"
-      2. "guess" is the character that you think should exist in the word. IMPORTATN: only accept CAPITAL Letter
+      2. "guess" is the character that you think should exist in the word. IMPORTANT: Only accepts CAPITAL letter
       3. "userId" & "secret" - same previouse request. you MUST include these two fields
 
     * Response:
@@ -152,7 +152,7 @@ You can play and submit as many times as you want, but we only store the LATEST 
       3. "userId", "secret", "status" - explained in Response section of "Initiate Game"
 
 4. **Get Test Results**
-  - You can get your results only when you have finished guess all the 80 words
+  - You can get your results only when you have finished guessing all the 80 words
   - You get your results by sending a request with "action":"getTestResults"
   - Request & Response:
     * Request:
@@ -192,13 +192,14 @@ You can play and submit as many times as you want, but we only store the LATEST 
         * "numberOfWordsTried" - the total number of words you tried in this game.
         * "numberOfCorrectWords" - the total number of words you guess correctly 
         * "numberOfWrongGuesses" - the total number of Wrong guess you have made. That is the "guessWord" you made but incorrect.
-        * "totalScore" - the total score is calculated. The higher the totalScore, the better results! 
+        * "totalScore" - the total score is calculated. The higher the totalScore, the better you did! 
           - totalScore = numberOfCorrectWord * 20 - numberOfWrongGuess. 
 
 5. **Submit Test Results**
   - After getting your results, if you are happy with your results, then you can submit the results
-  - To submit the results, you put "action":"submitTestResults"
-  - You should copy the repsonse and send to joyce[at]strikingly.com
+  - To submit the results, you should request "action":"submitTestResults"
+  - You can keep playing and submit again until you're satisfied with your score. Only the most recent results are stored in our system.
+  - You should copy the response and send to joyce[at]strikingly.com
   - Request & Response
     * Request:
       <pre><code> 
@@ -273,10 +274,10 @@ Use a Chrome extension to simulate send request and get response in order to fam
 
 ## Q&A
 1. Can I skip a word?
-  Yes! send another "Give Me A Word" request, i.e. "action":"nextWord"
+  Yes! Send another "Give Me A Word" request, i.e. "action":"nextWord"
 
 2. Can you submit mulitple results?
-  Yes and No! You can submit your test results as many times as you want. BUT we ONLY store your LATEST submission.
+  Yes and no! You can submit your test results as many times as you want. BUT we ONLY store your LATEST submission.
 
 3. Can I always inititate a new game?
   Yes! you can always initiate a new game and play the game again and again. BUT always remember to submit your results if you are happy with your performance on a certain game.
@@ -284,7 +285,7 @@ Use a Chrome extension to simulate send request and get response in order to fam
 
 ## Further Questions?
 If you have any questions, please write to joyce@strikingly.com. 
-In case you want to make queries on any unexpected system error, please send us your HTTP request body and response (if any).
+Got an unexpected error in the API? Please send us your HTTP request body and response (if any).
 
 HAVE FUN!
 

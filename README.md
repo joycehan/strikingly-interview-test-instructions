@@ -274,15 +274,30 @@ Sample:
 Use a Chrome extension to simulate send request and get response in order to familiar with yourself with the flow
 
 ## Q&A
-1. Can I skip a word?
-	Yes! send another "Give Me A Word" request, i.e. "action":"nextWord"
 
-2. Can you submit mulitple results?
-	Yes and No! You can submit your test results as many times as you want. BUT we ONLY store your LATEST submission.
+### Can I skip a word?
 
-3. Can I always inititate a new game?
-	Yes! you can always initiate a new game and play the game again and again. BUT always remember to submit your results if you are happy with your performance on a certain game.
+Yes! send another "Give Me A Word" request, i.e. "action":"nextWord"
 
+### Can you submit mulitple results?
+
+Yes and No! You can submit your test results as many times as you want. BUT we ONLY store your LATEST submission.
+
+### Can I always inititate a new game?
+
+Yes! you can always initiate a new game and play the game again and again. BUT always remember to submit your results if you are happy with your performance on a certain game.
+
+### I receive 5xx
+
+We have a lot of applicants playing the game. Unfortunately, our server is not made to handle a lot of load at the same time, so it could timeout. As you are writing a client program, you should handle this case. This is just something you have to deal with when you write production software.
+
+### I receive 401 error
+
+This is because you have a wrong secret key.
+
+### Your hangman server is buggy!
+
+We get this comments sometimes. In most cases, it's because the applicants didn't handle certain cases. Close to a thosand of applicants have played the game with no issue. So please read this document carefully before you jump into this conclusion. No software is bug-free though, so if you have carefully thought about it and still can't proceed, email us.
 
 ## Further Questions?
 If you have any questions, please write to joyce@strikingly.com. 

@@ -70,7 +70,7 @@ You can play and submit as many times as you want, but we only store the LATEST 
   - After getting the secret key, you can ask the system to give you a word
   - Remember to include BOTH your "userId" and "secret", and put the correct "action" as "nextWord"
   - In the response you will have "word" in the JSON. The "\*" indicates the characters that you have to guess in a word. The number of "\*" in the word key tells you the number of charaters in a word.
-  - What kinds of Words will appear in the game? please read [Words](https://github.com/joycehan/strikingly-interview-test-instructions/edit/master/README.md#words) section 
+  - What kinds of Words will appear in the game? please read [Words](https://github.com/joycehan/strikingly-interview-test-instructions#words) section 
   - Request & Response
     * Request:
       <pre><code>
@@ -267,11 +267,11 @@ You can play and submit as many times as you want, but we only store the LATEST 
 
 Sample: 
 
-`curl -X POST -d '{"userId":YOUR_EMAIL, "action":"initiateGame"}' http://strikingly-interview-test.herokuapp.com/guess/process --header "Content-Type:application/json"`
+`curl -X POST -d '{"userId":"YOUR_EMAIL", "action":"initiateGame"}' http://strikingly-interview-test.herokuapp.com/guess/process --header "Content-Type:application/json"`
     
 
 ## Tips:
-Use a Chrome extension to simulate send request and get response in order to familiar with yourself with the flow
+Use a Chrome extension to simulate sending request and get response in order to familiar with yourself with the flow
 
 ## Q&A
 

@@ -8,7 +8,7 @@ This test is based on the famous Hangman Game. Your task is to write a program t
 ## Requirements
 * Write a program according to the following specifications. When you run the program, the program should play the game automatically. When you're happy with your score, submit your score to us.
 * Email us your finished program! 
-* **Be sure to include a Readme.txt explaining the cool things you did.**
+* **Be sure to include a Readme.txt explaining the cool things you did.** Walk us through your algorithm, how it works, etc.
 * For back-end applicants, please use the Ruby programming language. For front-end applicants, please use JavaScript or CoffeeScript!
 * You can use ANY libraries relevant for this task. Use libraries to save dev time and improve your score!
 

@@ -4,29 +4,34 @@ Welcome to Strikingly Interview Test
 Introduction
 ------------
 
-This test is based on the famous Hangman Game. Your task is to write a program
-to play Hangman, guessing words from our server through a RESTful API.
+This test is based on the famous [Hangman Game](http://en.wikipedia.org/wiki/Hangman_(game)).
+Your task is to write a program to play Hangman, guessing words from our server through a RESTful API.
 
 ### Requirements
 
-* Write a program according to the following specifications. When you run the
-  program, the program should play the game automatically. When you're happy
-  with your score, submit your score to us.
-* Email us your finished program!
-* **Be sure to include a README explaining the cool things you did.**
-  Walk us through your algorithm, how it works, etc.
-* For back-end applicants, please use the Ruby programming language.
-  For front-end applicants, please use JavaScript or CoffeeScript.
+* **For back-end applicants:** write a Ruby program according to the following
+  specifications. When you run the program, the program should play the game
+  automatically. When you're happy with your score, submit your score to us.
+* **For front-end applicants:** write a JavaScript/CoffeeScript program according
+  to the following specifications. When you run the program, the program should
+  play the game automatically. When you're happy with your score, submit your
+  score to us.
+* **For iOS/Android applicants:** write an iOS/Android App according to the
+  following specifications. Users of your app should be able to play the hangman
+  game and they should be able to view and submit their score.
 * You can use ANY libraries relevant for this task. Use libraries to save dev
-  time and improve your score!
+  time and improve your score.
+* Email us your finished program.
+* Be sure to include a README explaining the cool things you did.
+  Walk us through your algorithm, how it works, etc.
 
 ### Our Expectations
 
 Through this programming test, you should be able to demonstrate:
 
+* Good understanding of Web/Mobile App development technology.
 * Good understanding of the programming language you use.
-* Code quality and maintainability.
-* Good programming practices.
+* Good programming practices. Code quality and maintainability.
 * Apply suitable algorithms to solve problems.
 * Creativity.
 * A good score! **Our average score is about 1000.** See how well you can do.

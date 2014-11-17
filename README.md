@@ -62,6 +62,10 @@ When you're satisfied with your score, don't submit any more!
 
 Note: You can get the `URL` from your invitation email.
 
+Example:
+
+`curl -X POST http://www.domain-name.com/game/on -H "Content-Type:application/json" --data '{"playerId":"YOUR_EMAIL", "action":"startGame"}'`
+
 ### 1. Start Game
 
 You send a request to the server to start game. Get the ID of game session from

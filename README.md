@@ -12,6 +12,10 @@ Your task is to write a program to play Hangman, guessing words from our server 
 * **For back-end applicants:** write a Ruby program according to the following
   specifications. When you run the program, the program should play the game
   automatically. When you're happy with your score, submit your score to us.
+* **For data engineer applicants:** write a program with your preferred language 
+  according to the following specifications. When you run the program, the program 
+  should play the game automatically. When you're happy with your score, submit 
+  your score to us.
 * **For front-end applicants:** write a JavaScript/CoffeeScript program according
   to the following specifications. When you run the program, the program should
   play the game automatically. When you're happy with your score, submit your

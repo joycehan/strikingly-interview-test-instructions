@@ -1,309 +1,330 @@
-## Welcome to Strikingly Interview Test
+Welcome to Strikingly Interview Test
+=====================================
 
+Introduction
+------------
 
-# INTRODUCTION
+This test is based on the famous [Hangman Game](http://en.wikipedia.org/wiki/Hangman_(game)).
+Your task is to write a program to play Hangman, guessing words from our server through a RESTful API.
 
-This test is based on the famous Hangman Game. Your task is to write a program to play Hangman, guessing words from our server through a REST API.
+### Requirements
 
-## Requirements
-* Write a program according to the following specifications. When you run the program, the program should play the game automatically. When you're happy with your score, submit your score to us.
-* Email us your finished program! 
-* **Be sure to include a Readme.txt explaining the cool things you did.** Walk us through your algorithm, how it works, etc.
-* For back-end applicants, please use the Ruby programming language. For front-end applicants, please use JavaScript or CoffeeScript!
-* You can use ANY libraries relevant for this task. Use libraries to save dev time and improve your score!
+* **For back-end applicants:** write a Ruby program according to the following
+  specifications. When you run the program, the program should play the game
+  automatically. When you're happy with your score, submit your score to us.
+* **For data engineer applicants:** write a program with your preferred language 
+  according to the following specifications. When you run the program, the program 
+  should play the game automatically. When you're happy with your score, submit 
+  your score to us.
+* **For front-end applicants:** write a JavaScript/CoffeeScript program according
+  to the following specifications. When you run the program, the program should
+  play the game automatically. When you're happy with your score, submit your
+  score to us.
+* **For iOS/Android applicants:** write an iOS/Android App according to the
+  following specifications. Users of your app should be able to play the hangman
+  game and they should be able to view and submit their score.
+* You can use ANY libraries relevant for this task. Use libraries to save dev
+  time and improve your score.
+* Email us your finished program in a ZIP file.
+* Be sure to include a README explaining the cool things you did.
+  Walk us through your algorithm, how it works, etc.
 
-## Our Expectations
+### Our Expectations
+
 Through this programming test, you should be able to demonstrate:
 
-* Good understanding of the programming language you use
-* Code quality and maintainability
-* Good programming practices
-* Apply suitable algorithms to solve problems
-* Creativity
+* Good understanding of Web/Mobile App development technology.
+* Good understanding of the programming language you use.
+* Good programming practices. Code quality and maintainability.
+* Apply suitable algorithms to solve problems.
+* Creativity.
 * A good score! **Our average score is about 1000.** See how well you can do.
 
-## Program Flow and Specification
-The overall workflow is in 5 stages, namely "Initiate Game", "Give Me A Word", "Make A Guess", "Get Test Results" & "Submit Test Results"
-You can play and submit as many times as you want, but we only store the LATEST submitted score. When you're satisfied with your score, don't submit any more!
 
-1. **Initiate Game**
-  - You send a request to the system to initiate a game
-  - The URL of the system could be found in your invitation email
-  - Get a secret key from the system and include this key in the following communications. This key identifies the game session!
-  - Request & Response
-    * Request:
-      <pre><code>
-      {
-        "action" : "initiateGame",
-        "userId" : "test@test.com"
-      }
-      </code></pre>
+The Game Flow and Specification
+--------------------------------
 
-      Explanation: 
-      1. "action" key should have the value "initiateGame"
-      2. "userId" key should be your email address, shown on your invitation email. please contact joyce@strikingly.com if you find your email address is invalid in this programming test.
+The overall workflow is in 5 stages: "Start Game", "Give Me A Word",
+"Make A Guess", "Get Your Result" and "Submit Your Result" You can play and
+submit as many times as you want, but we only store the LATEST submitted score.
+When you're satisfied with your score, don't submit any more!
 
-    * Response:
-      <pre><code>
-      {
-        "message":"Welcome To Strikingly Interview Test!",
-        "userId":"test@test.com",
-        "secret":"2V2GUB00590H33DIEMH24V9V03PU8F",
-        "status":200,
-        "data":
-        {
-          "numberOfWordsToGuess":80,
-          "numberOfGuessAllowedForEachWord":10
-        }
-      }
-      </code></pre>
+### HTTP Request
 
-      Explanation: 
-      1. "message" always tells you a human readable message. The message in this response is a welcome message.
-      2. "userId" shows your email address
-      3. "secret" gives you a secret for the follwing communication. This secret key identifies each game you play.
-      4. "status" tells you the status of your request. It follows the standard HTTP Status Code. 200 - OK, 400 - Bad Request, 401 - Unauthenticated
-      5. "data" contains some useful data for your reference. In the "initiateGame" response, 
-        "numberOfWordsToGuess" - tells you how many words you will have to guess to finish the game.
-        "numberOfGuessAllowedForEachWord" - tells you how many INCORRECT guess you may have for each word.
+* URL: http://www.domain-name.com/game/on
+* Method: POST
+* Headers:
+  - Content-Type:application/json
+* Body: JSON Hash
 
-2. **Give Me A Word**
-  - After getting the secret key, you can ask the system to give you a word
-  - Remember to include BOTH your "userId" and "secret", and put the correct "action" as "nextWord"
-  - In the response you will have "word" in the JSON. The "\*" indicates the characters that you have to guess in a word. The number of "\*" in the word key tells you the number of charaters in a word.
-  - What kinds of Words will appear in the game? please read [Words](https://github.com/joycehan/strikingly-interview-test-instructions#words) section 
-  - Request & Response
-    * Request:
-      <pre><code>
-      {
-        "userId":"test@test.com",
-        "action":"nextWord",
-        "secret":"2V2GUB00590H33DIEMH24V9V03PU8F"
-      }
-      </code></pre>
+```javascript
+{
+  "key1": "value1",
+  "key2": "value2"
+}
+```
 
-      Explanation:
-      1. "userId" should be your email address
-      2. "action" should be "nextWord"
-      3. "secret" should be the secret in the reponse from "initateGame"
+Note: You can get the `URL` from your invitation email.
 
-    * Response:
-      <pre><code> 
-      {   
-        "word":"*****",
-        "userId":"test@test.com",
-        "secret":"2V2GUB00590H33DIEMH24V9V03PU8F",
-        "status":200,
-        "data":
-          {
-            "numberOfWordsTried":1,
-            "numberOfGuessAllowedForThisWord":10
-          }
-      }
-      </code></pre>
+Example:
 
-      Explanation:
-      1. "word" contains the "*". A "*" sign indicate a missing character in a word
-      2. "data" 
-        * "numberOfWordsTried" - tells you the number of words that you have tried.
-        * "numberOfGuessAllowedForThisWord" - tells you the number of guess you can have on this word. When the number is 0 and you still can't get the correct word, then this word will be counted as incorrect and you have to get a new word.
-      3. "userId", "secret", "status" - explained in Response section of "Initiate Game"
+`curl -X POST http://www.domain-name.com/game/on -H "Content-Type:application/json" --data '{"playerId":"YOUR_EMAIL", "action":"startGame"}'`
 
-3. **Make A Guess**
-  - You can make a guess on those characters shown as "*" in a word
-  - You can only guess ONE character per request, i.e. "guess":"P". **NOTE**: The system will treat two or more characters as a WRONG guess.
-  - Let's say the word - "*****" is indeed "HAPPY". If the your character does exist in the word, then the response will return you the character in the corresponding positions of the word, i.e. "word": "**PP*"
-  - But if your guess is incorrect, then it will return you the same word. Say you make your next guess as "guess":"K" and "K" does NOT exist in "HAPPY", you will get the response as "**PP*"
-  - If you get the "word" without any "*", then it means you get the word correct. for instance, "word":"HAPPY". And you can then get a new word by sending "Give A Word" request
-  - Request & Response
-    * Request:
-      <pre><code>
-      {
-        "action":"guessWord",
-        "guess":"P",
-        "userId":"test@test.com",
-        "secret":"2V2GUB00590H33DIEMH24V9V03PU8F"
-      }
-      </code></pre>
+### 1. Start Game
 
-      Explanation:
-      1. "action" should be "guessWord"
-      2. "guess" is the character that you think should exist in the word. IMPORTANT: Only accepts CAPITAL letter
-      3. "userId" & "secret" - same previouse request. you MUST include these two fields
+You send a request to the server to start game. Get the ID of game session from
+the server. It identifies the game session and you need include it in the
+following communications.
 
-    * Response:
-      <pre><code>
-      {
-        "word":"**PP*",
-        "userId":"test@test.com",
-        "secret":"2V2GUB00590H33DIEMH24V9V03PU8F",
-        "status":200,
-        "data":
-        {
-          "numberOfWordsTried":1,
-          "numberOfGuessAllowedForThisWord":10
-        }
-      }
-      </code></pre>
+#### Request and Response
 
-      Explanation:
-      1. "word" is updated to "**PP*" because "P" exist in "HAPPY"
-      2. "data" 
-        * "numberOfWordsTried" - tells you the number of words that you have tried.
-        * "numberOfGuessAllowedForThisWord" - tells you the number of guess you can have on this word. When the number is 0 and you still can't get the correct word, then this word will be counted as incorrect and you have to get a new word.
-      3. "userId", "secret", "status" - explained in Response section of "Initiate Game"
+**Request:**
 
-4. **Get Test Results**
-  - You can get your results only when you have finished guessing all the 80 words
-  - You get your results by sending a request with "action":"getTestResults"
-  - Request & Response:
-    * Request:
-      <pre><code>
-      {
-        "action":"getTestResults",
-        "userId":"test@test.com",
-        "secret":"2V2GUB00590H33DIEMH24V9V03PU8F"
-      }
-      </code></pre>
+```javascript
+{
+  "playerId": "test@example.com",
+  "action" : "startGame"
+}
+```
 
-      Explanation:
-      1. "action" should be "getTestResults"
-      3. "userId" & "secret" - same previouse request. you MUST include these two fields
-    
-    * Response:
-      <pre><code>
-      {
-        "message":"Please check your results! Submit the results if you are happy with it!",
-        "userId":"test@test.com",
-        "secret":"2V2GUB00590H33DIEMH24V9V03PU8F",
-        "status":200,
-        "data":
-        {
-          "numberOfWordsTried":80,
-          "numberOfCorrectWords":50,
-          "numberOfWrongGuesses":300,
-          "totalScore": 700
-        }
-      }
-      </code></pre>
+* `action` is the action you want the server to take.
+* `playerId` is your identity.
 
-      Explanation:
-      1. "message" tells you a readable message which 
-      2. "userId", "secret", "status" - explained in Response section of "Initiate Game"
-      3. "data" - your results! 
-        * "numberOfWordsTried" - the total number of words you tried in this game.
-        * "numberOfCorrectWords" - the total number of words you guess correctly 
-        * "numberOfWrongGuesses" - the total number of Wrong guess you have made. That is the "guessWord" you made but incorrect.
-        * "totalScore" - the total score is calculated. The higher the totalScore, the better you did! 
-          - totalScore = numberOfCorrectWord * 20 - numberOfWrongGuess. 
+Note: You can get your `playerId` from your invitation email.
 
-5. **Submit Test Results**
-  - After getting your results, if you are happy with your results, then you can submit the results
-  - To submit the results, you should request "action":"submitTestResults"
-  - You can keep playing and submit again until you're satisfied with your score. Only the most recent results are stored in our system.
-  - You should copy the response and send to joyce[at]strikingly.com
-  - Request & Response
-    * Request:
-      <pre><code> 
-      {
-        "action":"submitTestResults",
-        "userId":"test@test.com",
-        "secret":"2V2GUB00590H33DIEMH24V9V03PU8F"
-      }
-      </code></pre>
+**Response:**
 
-      Explanation:
-      1. "action" should be "submitTestResults"
-      3. "userId" & "secret" - same previouse request. you MUST include these two fields
+```javascript
+{
+  "message": "THE GAME IS ON",
+  "sessionId": "04ccda515d152cbe630e156af9095104",
+  "data": {
+     "numberOfWordsToGuess": 80,
+     "numberOfGuessAllowedForEachWord": 10
+  }
+}
+```
 
-    * Response:
-      <pre><code> 
-      {
-        "message":"Thank You! Please paste this JSON and send to joyce[at]strikingly.com",
-        "userId":"test@test.com",
-        "secret":"2V2GUB00590H33DIEMH24V9V03PU8F",
-        "status":200,
-        "data":
-        {
-          "userId":"test@test.com",
-          "secret":"2V2GUB00590H33DIEMH24V9V03PU8F",
-          "numberOfWordsTried":80,
-          "numberOfCorrectWords":50,
-          "numberOfWrongGuesses":30,
-          "totalScore":700,
-          "dateTime":"Fri Aug 02 2013 14:40:39 GMT+0000 (UTC)"
-        }
-      }
-      </code></pre>
+* `message` - shows you a welcome message.
+* `sessionId` - gives you the ID of the game session which you just started.
+* `data`
+  * `numberOfWordsToGuess` - tells you how many words you will have to guess to
+    finish the game.
+  * `numberOfGuessAllowedForEachWord` - tells you how many INCORRECT guess you
+    may have for each word.
 
-      Explanation:
-      1. "message" tells you a readable message which 
-      2. "userId", "secret", "status" - explained in Response section of "Initiate Game"
-      3. "data" - a whole set of data that will be store in our database as your results.
 
-## Words
-1. Types of Words
-  - Plural
-  - Tenses
-  - Adjectives
-2. Difficulty of Words
-  - Among the 80 words to guess, there will be in different lengths
-    * 1st to 20th word : length <= 5 characters
-    * 21st to 40th word : length <= 8 characters
-    * 41st to 60th word : length <= 12 characters
-    * 61st to 80th word : length > 12 characters
+### 2. Give Me A Word
 
-## Http Request Specification
-1. Request URL: <Please found it in your email address>
+After getting the session ID, you can ask the server to give you a word.
+Remember to include your session ID in the request.
 
-2. HTTP Request
-  - Method : post
-  - Request Body
-    <pre><code>
-      {
-        "key1":"value1",
-        "key2":"value2"
-      }
-    </code></pre>
+You will get a `word` in the response JSON. The "\*" indicates the letters that
+you have to guess in a word. The number of "\*" in the word tells you the number
+of letters the word contains.
 
-Sample: 
+**Word Difficulty:**
 
-`curl -X POST -d '{"userId":"YOUR_EMAIL", "action":"initiateGame"}' http://strikingly-interview-test.herokuapp.com/guess/process --header "Content-Type:application/json"`
-    
+* 1st  to 20th word : length <= 5  letters
+* 21st to 40th word : length <= 8  letters
+* 41st to 60th word : length <= 12 letters
+* 61st to 80th word : length  > 12 letters
 
-## Tips:
-Use a Chrome extension to simulate sending request and get response in order to familiar with yourself with the flow
+#### Request and Response
 
-## Q&A
+**Request:**
+
+```javascript
+{
+  "sessionId": "3f0421bb5cb56631c170a35da90161d2",
+  "action" : "nextWord"
+}
+```
+
+**Response:**
+
+```javascript
+{
+  "sessionId": "3f0421bb5cb56631c170a35da90161d2",
+  "data": {
+    "word": "*****",
+    "totalWordCount": 1,
+    "wrongGuessCountOfCurrentWord": 0
+  }
+}
+```
+
+* `data`
+  * `word` - gives you the word you need to guess.
+  * `totalWordCount` - tells you the number of words that you have tried.
+  * `wrongGuessCountOfCurrentWord` - tells you the number of wrong guess you
+    already made on this word.
+
+
+### 3. Make A Guess
+
+You can make a guess on those letters shown as "\*" in a word.
+
+**IMPORTANT:** You can only guess ONE character per request and only CAPITAL
+letter is accepted.
+
+Let's say that the word (`*****`) is indeed "HAPPY". If your letter does exist
+in the word, then the response will return you the word with the corresponding
+"\*" unveiled (`**PP*`).
+
+But if your guess is incorrect, it will return you the same word. Say that you
+make your next guess as "K" and "K" does NOT exist in "HAPPY", you will get the
+response as "**PP*".
+
+If you get the word without any "\*", it means that you guess the word correctly.
+And you can then get a new word by sending "Give Me A Word" request.
+
+#### Request and Response
+
+**Request:**
+
+```javascript
+{
+  "sessionId": "3f0421bb5cb56631c170a35da90161d2",
+  "action" : "guessWord",
+  "guess" : "P"
+}
+```
+
+**Response:**
+
+```javascript
+{
+  "sessionId": "3f0421bb5cb56631c170a35da90161d2",
+  "data": {
+    "word": "**PP*",
+    "totalWordCount": 1,
+    "wrongGuessCountOfCurrentWord": 0
+  }
+}
+```
+
+### 4. Get Your Result
+
+You can get your result at anytime after starting the game.
+
+#### Request and Response
+
+**Request:**
+
+```javascript
+{
+  "sessionId": "3f0421bb5cb56631c170a35da90161d2",
+  "action" : "getResult"
+}
+```
+
+**Response:**
+
+```javascript
+{
+  "sessionId": "3f0421bb5cb56631c170a35da90161d2",
+  "data": {
+    "totalWordCount": 40,
+    "correctWordCount": 20,
+    "totalWrongGuessCount": 100,
+    "score": 300
+  }
+}
+```
+
+* `data`
+  * `totalWordCount` - the total number of words you tried.
+  * `correctWordCount` - the total number of words you guess correctly.
+  * `totalWrongGuessCount` - the total number of Wrong guess you have made.
+  * `score` - your score!
+
+
+### 5. Submit Your Result
+
+When you finished all the words, you can submit your result.
+
+#### Request and Response
+
+**Request:**
+
+```javascript
+{
+  "sessionId": "3f0421bb5cb56631c170a35da90161d2",
+  "action" : "submitResult"
+}
+```
+
+**Response:**
+
+```javascript
+{
+  "message": "GAME OVER",
+  "sessionId": "3f0421bb5cb56631c170a35da90161d2",
+  "data": {
+    "playerId": "test@example.com",
+    "sessionId": "3f0421bb5cb56631c170a35da90161d2",
+    "totalWordCount": 80,
+    "correctWordCount": 77,
+    "totalWrongGuessCount": 233,
+    "score": 1307,
+    "datetime": "2014-10-28 11:45:58"
+  }
+}
+```
+
+### Errors
+
+If something goes wrong, you will receive an error response.
+
+The HTTP status code will be 400, 401, 404, 422 or 500.
+
+The response body contains the error message:
+
+```javascript
+{
+  "message": "The error message here"
+}
+```
+
+### Tips
+
+Use a Chrome extension to send request and get response to get yourself familiar
+with the flow.
+
+
+Q&A
+---
 
 ### Can I skip a word?
 
-Yes! send another "Give Me A Word" request, i.e. "action":"nextWord"
+Yes! Send another "Give Me A Word" request.
 
-### Can you submit mulitple results?
+### Can I always start a new game?
 
-Yes and No! You can submit your test results as many times as you want. BUT we ONLY store your LATEST submission.
+Yes! you can always start a new game and play the game again and again.
+BUT always remember to submit your results if you are happy with your
+performance on a certain game.
 
-### Can I always inititate a new game?
+### I receive Internal Server Error.
 
-Yes! you can always initiate a new game and play the game again and again. BUT always remember to submit your results if you are happy with your performance on a certain game.
-
-### I receive 5xx
-
-We have a lot of applicants playing the game. Unfortunately, our server is not made to handle a lot of load at the same time, so it could timeout. As you are writing a client program, you should handle this case. This is just something you have to deal with when you write production software.
-
-### I receive 401 error
-
-This is because you have a wrong secret key.
+We have a lot of applicants playing the game. Unfortunately, our server is not
+made to handle a lot of load at the same time, so it could timeout. As you are
+writing a client program, you should handle this case. This is just something
+you have to deal with when you write production software.
 
 ### Your hangman server is buggy!
 
-We get this comments sometimes. In most cases, it's because the applicants didn't handle certain cases. Close to a thosand of applicants have played the game with no issue. So please read this document carefully before you jump into this conclusion. No software is bug-free though, so if you have carefully thought about it and still can't proceed, email us.
+We get this comments sometimes. In most cases, it's because the applicants
+didn't handle certain cases. Close to a thosand of applicants have played the
+game with no issue. So please read this document carefully before you jump into
+this conclusion. No software is bug-free though, so if you have carefully
+thought about it and still can't proceed, email us.
 
-## Further Questions?
-If you have any questions, please write to joyce@strikingly.com. 
-Got an unexpected error in the API? Please send us your HTTP request body and response (if any).
+### Further Questions?
 
-HAVE FUN!
+If you have any questions, please email to joyce@strikingly.com. Send us your
+HTTP request and response information (if any).
 
 
+**HAVE FUN!**

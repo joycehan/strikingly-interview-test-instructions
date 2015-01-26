@@ -25,7 +25,7 @@ Your task is to write a program to play Hangman, guessing words from our server 
   game and they should be able to view and submit their score.
 * You can use ANY libraries relevant for this task. Use libraries to save dev
   time and improve your score.
-* Email us your finished program in a ZIP file.
+* Email us your finished program in a ZIP file. Make sure to name the file in this format: firstname_lastname.zip. i.e. Han_Meimei.zip
 * Be sure to include a README explaining the cool things you did.
   Walk us through your algorithm, how it works, etc.
 

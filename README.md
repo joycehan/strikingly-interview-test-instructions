@@ -316,7 +316,7 @@ you have to deal with when you write production software.
 ### Your hangman server is buggy!
 
 We get this comments sometimes. In most cases, it's because the applicants
-didn't handle certain cases. Close to a thosand of applicants have played the
+didn't handle certain cases. Close to a thousand of applicants have played the
 game with no issue. So please read this document carefully before you jump into
 this conclusion. No software is bug-free though, so if you have carefully
 thought about it and still can't proceed, email us.

@@ -174,7 +174,7 @@ in the word, then the response will return you the word with the corresponding
 
 But if your guess is incorrect, it will return you the same word. Say that you
 make your next guess as "K" and "K" does NOT exist in "HAPPY", you will get the
-response as "**PP*".
+response as "`**PP*`".
 
 If you get the word without any "\*", it means that you guess the word correctly.
 And you can then get a new word by sending "Give Me A Word" request.
